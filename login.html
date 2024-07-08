@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        text-align: center;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .login-form {
+        background-color: #e9e9e9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        margin: 0 auto;
+    }
+    .login-form input[type="text"], 
+    .login-form input[type="password"] {
+        width: calc(100% - 40px);
+        height: 32px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        padding-left: 40px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 20px 20px;
+    }
+    .login-form input[type="text"] {
+        background-image: url('Rectangle 28.png');
+    }
+    .login-form input[type="password"] {
+        background-image: url('lock.png');
+    }
+    .login-form .btn {
+        width: 50%;
+        height: 40px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        background-color: rgba(135, 141, 147, 0.34);
+        cursor: pointer;
+    }
+    .login-form .btn:active {
+        background-color: rgb(133, 139, 148);
+    }
+    .login-form a {
+        font-size: 15px;
+        color: rgb(67, 87, 125);
+        text-decoration: none;
+        display: block;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>오늘의 최애</h1>
+    <div class="login-form">
+        <form>
+            <input type="text" placeholder="아이디" name="username" required>
+            <input type="password" placeholder="비밀번호" name="password" required>
+            <input type="submit" value="로그인" class="btn" onclick="alert('로그인 성공!')">
+            <a href="회원가입.html">회원가입</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
