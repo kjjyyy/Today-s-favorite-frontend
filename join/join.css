@@ -2,7 +2,7 @@ h1 {
   font-size: 3em;
   margin-top: 100px;
   margin-bottom: 30px;
-  text-align: center; /* 글자 가운데 정렬 */
+  text-align: left; /* 왼쪽에 있는게 더 예쁜 것 같아서 추가했는데 마음에 안드시면 다시 center로 바꾸면 됩니다 */
 }
 table {
   width: 530px;
