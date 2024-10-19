@@ -1,0 +1,162 @@
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                '오늘의 최애',
+                style: TextStyle(
+                  fontFamily: 'Inter-Black',
+                  fontSize: 48,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              const SizedBox(height: 40),
+              Container(
+                padding: const EdgeInsets.all(25),
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  children: [
+                    const TextField(
+                      decoration: InputDecoration(
+                        hintText: '아이디 입력',
+                        hintStyle: TextStyle(
+                          fontFamily: 'Inter-Black',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                        ),
+                        icon: Icon(Icons.person),
+                      ),
+                    ),
+                    const TextField(
+                      decoration: InputDecoration(
+                        hintText: '비밀번호 입력',
+                        hintStyle: TextStyle(
+                          fontFamily: 'Inter-Black',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                        ),
+                        icon: Icon(Icons.lock),
+                      ),
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 40),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(140, 30),
+                            backgroundColor: Colors.grey[400],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  16), // 모서리 둥글기 조절 (숫자 조절 가능)
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '로그인',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Inter-Black',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(140, 30),
+                            backgroundColor: Colors.grey[400],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  16), // 모서리 둥글기 조절 (숫자 조절 가능)
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '회원가입',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Inter-Black',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 50),
+                    const Text("소셜 계정으로 로그인"),
+                    const SizedBox(height: 20),
+                    Row(
+                      // 각 소셜의 로고는 추후에 삽입 예정
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            // 구글 로그인 처리
+                          },
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(100, 40),
+                            backgroundColor: Colors.blue, // 구글 색상
+                          ),
+                          child: const Text(
+                            '구글',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        const SizedBox(width: 30),
+                        ElevatedButton(
+                          onPressed: () {
+                            // 카카오 로그인 처리
+                          },
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(100, 40),
+
+                            backgroundColor: const Color(0xFFFEE500), // 카카오 색상
+                          ),
+                          child: const Text(
+                            '카카오',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        const SizedBox(width: 30),
+                        ElevatedButton(
+                          onPressed: () {
+                            // 네이버 로그인 처리
+                            launchUrl(Uri.parse('https://www.naver.com/'));
+                          },
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(100, 40),
+                            backgroundColor: const Color(0xFF03C75A), // 네이버 색상
+                          ),
+                          child: const Text(
+                            '네이버',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
